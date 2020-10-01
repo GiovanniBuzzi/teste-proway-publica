@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { isAuthenticated } from "./services/auth";
 
 import Login from './pages/login/index'
+import Main from './pages/main/index'
+import MyGames from './pages/myGames/index'
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -23,7 +25,9 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={() => <Login/>} />
-      <PrivateRoute path="/app" component={() => <h1>Você está logado</h1>} />
+      <PrivateRoute exact path="/main" component={() => <Main/>}/>
+      <PrivateRoute exact path="/mygames" component={() => <MyGames/>}/>
+
     </Switch>
   </BrowserRouter>
 );

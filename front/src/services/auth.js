@@ -1,6 +1,6 @@
 export const isAuthenticated = () =>{
 
-    if(localStorage.getItem('Login') == 'true'){
+    if(localStorage.getItem('login') == 'true'){
         return true;
     }else{
         return false;

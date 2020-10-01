@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { Redirect } from 'react-router-dom';
 
 import api from '../../services/api'
 
@@ -11,15 +10,15 @@ function Login(props) {
     function handleLogin(){
         const log = api.post('/users/login',{login:user, password:password})
         .then((response) => doRedirect(response))
-        .catch(localStorage.setItem('Login',false));
-
-        
+        .catch(localStorage.setItem('login',false));    
     }
 
     function doRedirect(response){
         if(response.data.auth === true){
-            localStorage.setItem('Login',response.data.auth);
-            window.location.replace('/app');
+            localStorage.setItem('login',response.data.auth);
+            sessionStorage.setItem('user_name',response.data.user_name);
+            sessionStorage.setItem('user_id',response.data.user_id);
+            window.location.replace('/main');
         }
     }
 

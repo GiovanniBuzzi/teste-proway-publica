@@ -44,7 +44,7 @@ module.exports = {
         }
 
         if(user.password == password){
-            return res.json({auth:true, user_id:user.id});
+            return res.json({auth:true, user_id:user.id, user_name:user.name});
         }
 
         return res.status(400).json({ error: 'Invalid Password'});
