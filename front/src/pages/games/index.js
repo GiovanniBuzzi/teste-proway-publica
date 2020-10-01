@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import api from '../../services/api'
 
-const MyGames = () => {
+const Games = () => {
 
     const [matches,
         setMatches] = useState([]);
@@ -41,4 +41,4 @@ const MyGames = () => {
     )
 }
 
-export default MyGames;
+export default Games;

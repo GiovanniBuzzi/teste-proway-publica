@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 
 import api from '../../services/api'
 
+import './login.css'
+
 function Login(props) {
 
     const [user, setUser] = useState('');
@@ -23,14 +25,21 @@ function Login(props) {
     }
 
     return (
-        <div>
-            <form onSubmit={(event) => {event.preventDefault()}}>
-                <label>Login</label>
-                <input type="text" value={user} onChange={e => setUser(e.target.value)}/>
-                <label>Password</label>
-                <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>
-                <button onClick={handleLogin}>Login</button>
-            </form>
+        <div className='login'>
+            <div className='form'>
+                <h1>Welcome</h1>
+                <form className='form2'onSubmit={(event) => {event.preventDefault()}}>
+                    <label>Login</label>
+                    <input type="text" value={user} onChange={e => setUser(e.target.value)}/>
+                    <p></p>
+                    <label>Password</label>
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
+                    <p></p>
+                    <div className='botao'>
+                        <button onClick={handleLogin}>Login</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }

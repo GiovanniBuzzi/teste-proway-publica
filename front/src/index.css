@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body{
+    margin: 0;
+    color: black;
+}
+
+.appBack{
+    height: 100vh;
+}
+
+.vertical{
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to top, orange 1%, transparent 90%);
+}
+
+.horizontal{
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to right, orange 1%, transparent 90%);
+}

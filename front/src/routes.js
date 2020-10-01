@@ -5,7 +5,7 @@ import { isAuthenticated } from "./services/auth";
 
 import Login from './pages/login/index'
 import Main from './pages/main/index'
-import MyGames from './pages/myGames/index'
+import Games from './pages/games/index'
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -26,7 +26,7 @@ const Routes = () => (
     <Switch>
       <Route exact path="/" component={() => <Login/>} />
       <PrivateRoute exact path="/main" component={() => <Main/>}/>
-      <PrivateRoute exact path="/mygames" component={() => <MyGames/>}/>
+      <PrivateRoute exact path="/games" component={() => <Games/>}/>
 
     </Switch>
   </BrowserRouter>
