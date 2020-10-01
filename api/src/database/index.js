@@ -12,4 +12,6 @@ const connection = new Sequelize(dbConfig);
 Match.init(connection);
 User.init(connection);
 
+User.associate(connection.models);
+Match.associate(connection.models);
 module.exports = connection;

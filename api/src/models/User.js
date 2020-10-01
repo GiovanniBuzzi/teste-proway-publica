@@ -13,6 +13,9 @@ class User extends Model {
             sequelize
         })
     }
+    static associate(models){
+        this.hasMany(models.Match, {foreignKey: 'id_user', as: 'matches'});
+    }
 }
 
 module.exports = User;

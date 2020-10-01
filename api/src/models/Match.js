@@ -9,6 +9,9 @@ class Match extends Model {
             sequelize
         })
     }
+    static associate(models){
+        this.belongsTo(models.User, {foreignKey: 'id_user', as: 'user'});
+    }
 }
 
 module.exports = Match;
