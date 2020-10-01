@@ -5,6 +5,7 @@ class User extends Model {
         super.init({
             name: DataTypes.STRING,
             login: DataTypes.STRING,
+            password: DataTypes.STRING,
             min_season: DataTypes.INTEGER,
             max_season: DataTypes.INTEGER,
             min_record: DataTypes.INTEGER,

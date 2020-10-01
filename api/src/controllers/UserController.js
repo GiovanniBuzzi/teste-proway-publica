@@ -28,6 +28,27 @@ module.exports = {
 
         return res.json({message: 'Success', user});
 
+    },
+
+    async login(req,res){
+        const {login, password} = req.body;
+
+        if(login == null || password == null){
+            return res.status(400).json({ error: 'Login/Password Null ???'});
+        }
+
+        const user = await User.findOne({where:{login:login}});
+
+        if(!user){
+            return res.status(400).json({ error: 'Invalid Login'});
+        }
+
+        if(user.password == password){
+            return res.json({auth:true, user_id:user.id});
+        }
+
+        return res.status(400).json({ error: 'Invalid Password'});
+
     }
 
 };
