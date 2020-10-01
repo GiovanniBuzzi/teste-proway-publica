@@ -5,7 +5,7 @@ module.exports = {
     port: 3306,
     username: 'giovannib',
     password: '123',
-    database: 'giovanni-buzzi',
+    database: 'teste-proway-publica',
     // <><><><><><><><><><><><>
     define: {
         underscored: true,
