@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 
+import api from '../../services/api'
+
 function Login() {
 
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
 
     function handleLogin(){
-        
+        const log = api.post('/login',{login:user, password:password});
     }
 
     return (
