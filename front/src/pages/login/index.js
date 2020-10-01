@@ -9,7 +9,7 @@ function Login(props) {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleLogin(){
+    function handleLogin(props){
         const log = api.post('/users/login',{login:user, password:password})
         .then((response) => doRedirect(response))
         .catch(localStorage.setItem('login',false));    
@@ -20,6 +20,7 @@ function Login(props) {
             localStorage.setItem('login',response.data.auth);
             sessionStorage.setItem('user_name',response.data.user_name);
             sessionStorage.setItem('user_id',response.data.user_id);
+
             window.location.replace('/main');
         }
     }
@@ -36,7 +37,7 @@ function Login(props) {
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
                     <p></p>
                     <div className='botao'>
-                        <button onClick={handleLogin}>Login</button>
+                        <button onClick={handleLogin}><h1>Login</h1></button>
                     </div>
                 </form>
             </div>

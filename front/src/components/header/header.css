@@ -1,0 +1,31 @@
+.header{
+    width: 100%;
+    background: linear-gradient(to bottom, black 1%, transparent 90%);
+    transition: ease-in 0.5s;
+    justify-content: center;
+    display: flex;
+}
+
+.header-box{
+    width: 80%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.header:hover{
+    background-color: black;
+    transition: ease-in 0.5s;
+}
+
+.botao{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.botao:hover{
+    color:gray;
+}
