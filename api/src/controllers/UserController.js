@@ -49,6 +49,39 @@ module.exports = {
 
         return res.status(400).json({ error: 'Invalid Password'});
 
-    }
+    },
+
+    async record(req,res){
+
+        const user_max = await User.findOne({where:{id:req.params.id_user},
+            attributes:['max_season','max_record'],
+            include: {association:'matches', limit: 5, order:[['points','DESC']], attributes:['points','adversary']}});
+
+        const user_min = await User.findOne({where:{id:req.params.id_user},
+            attributes:['min_season','min_record'],
+            include: {association:'matches', limit: 5, order:[['points','ASC']], attributes:['points','adversary']}});
+
+        if(!user_max || !user_min){
+            return res.status(400).json({ error: 'This user dont exist'});
+        }
+        return res.json({user_max,user_min});
+    },
+
+    async records(req,res){
+
+        const max_season = await User.findAll({limit: 3, order: [[ 'max_season', 'DESC' ]],
+        attributes: ['name','max_record'], 
+        include: {association: 'matches', limit: 3, order:[['points', 'DESC']], attributes:['points','adversary']}});
+
+        const min_season = await User.findAll({limit: 3, order: [[ 'min_season', 'DESC' ]],
+        attributes: ['name','min_record'], 
+        include: {association: 'matches', limit: 3, order:[['points', 'ASC']], attributes:['points','adversary']}});
+
+
+        if(!max_season || !min_season){
+            return res.status(400).json({ error: 'Users not found'});
+        }
+        return res.json({max_season,min_season});
+    },
 
 };

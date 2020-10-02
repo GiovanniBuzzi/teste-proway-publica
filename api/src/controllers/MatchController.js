@@ -5,7 +5,7 @@ const User = require('../models/User');
 module.exports = {
 
     async index(req,res){
-        const matches = await Match.findAll({
+        const matches = await Match.findAll({order: [ [ 'id', 'DESC' ]],
             where:{id_user:req.params.id_user}});
         if(!matches){
             return res.status(400).json({ error: 'Dont exist Matches'});

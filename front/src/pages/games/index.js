@@ -43,7 +43,7 @@ const Games = () => {
                             {matches.length > 0
                                 ? (matches.map((match, i) => (
                                     <tr key={match.id}>
-                                        <td>{i + 1}</td>
+                                        <td>{matches.length-i}</td>
                                         <td>{match.adversary}</td>
                                         <td>{match.points}</td>
                                     </tr>
