@@ -10,7 +10,7 @@ class Team extends Model {
     }
     static associate(models){
         this.hasMany(models.User, {foreignKey: 'id_team', as: 'players'});
-        this.hasMany(models.Match, {foreignKey: 'id_adversary', as: 'teams'});
+        this.hasMany(models.Match, {foreignKey: 'id_adversary', as: 'adversarys'});
     }
 }
 

@@ -39,7 +39,6 @@ const Records = () => {
     return (
 
         <div className='records'>
-            {console.log(minUserRecord.min_record)}
             <Header/>
             <div className="tablesBox">
                 <div className='tableMax'>
@@ -59,9 +58,9 @@ const Records = () => {
                             </tr>
                             {maxMatches.length > 0
                                 ? (maxMatches.map((match, i) => (
-                                    <tr key={match.id}>
-                                        <td>{i}</td>
-                                        <td>{match.adversary}</td>
+                                    <tr key={i}>
+                                        <td>{i+1}</td>
+                                        <td>{[match.adversary.name]}</td>
                                         <td>{match.points}</td>
                                     </tr>
                                 )))
@@ -89,10 +88,10 @@ const Records = () => {
                                 <th>Points</th>
                             </tr>
                             {minMatches.length > 0
-                                ? (minMatches.map((match, i) => (
-                                    <tr key={match.id}>
-                                        <td>{i}</td>
-                                        <td>{match.adversary}</td>
+                                ? (minMatches.map((match, u) => (
+                                    <tr key={u}>
+                                        <td>{u+1}</td>
+                                        <td>{[match.adversary.name]}</td>
                                         <td>{match.points}</td>
                                     </tr>
                                 )))

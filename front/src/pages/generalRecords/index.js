@@ -42,7 +42,7 @@ const GeneralRecords = () => {
                                     style={{
                                     textAlign: 'center'
                                 }}
-                                    colSpan={4}>Most Points Match</th>
+                                    colSpan={4}>Most Points Match (One per Player)</th>
                             </tr>
                             <tr>
                                 <th>Rank</th>
@@ -58,7 +58,7 @@ const GeneralRecords = () => {
                                         {user.matches.length >= i - 1
                                             ? (user.matches.map((match, u) => (
                                                 <Fragment key={u}>
-                                                    <td>{match.adversary}</td>
+                                                    <td>{[match.adversary.name]}</td>
                                                     <td>{match.points}</td>
                                                 </Fragment>
                                             )))
@@ -91,7 +91,7 @@ const GeneralRecords = () => {
                                     style={{
                                     textAlign: 'center'
                                 }}
-                                    colSpan={4}>Less Points Match</th>
+                                    colSpan={4}>Less Points Match (One per Player)</th>
                             </tr>
                             <tr>
                                 <th>Rank</th>
@@ -107,7 +107,7 @@ const GeneralRecords = () => {
                                         {user.matches.length >= i - 1
                                             ? (user.matches.map((match, u) => (
                                                 <Fragment key={u}>
-                                                    <td>{match.adversary}</td>
+                                                    <td>{[match.adversary.name]}</td>
                                                     <td>{match.points}</td>
                                                 </Fragment>
                                             )))
