@@ -7,7 +7,8 @@ module.exports = {
 
     async index(req,res){
         const matches = await Match.findAll({order: [ [ 'id', 'DESC' ]],
-            where:{id_user:req.params.id_user}});
+            where:{id_user:req.params.id_user}, attributes:['points'],
+            include:{association:'adversary', attributes:['name']}});
         if(!matches){
             return res.status(400).json({ error: 'Dont exist Matches'});
         }

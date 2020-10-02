@@ -26,6 +26,7 @@ const Games = () => {
     return (
         <div className='games'>
             <Header/>
+            {console.log(matches)}
             <div className='table-box'>
                 <div
                     style={{
@@ -44,7 +45,7 @@ const Games = () => {
                                 ? (matches.map((match, i) => (
                                     <tr key={match.id}>
                                         <td>{matches.length-i}</td>
-                                        <td>{match.adversary}</td>
+                                        <td>{}</td>
                                         <td>{match.points}</td>
                                     </tr>
                                 )))
