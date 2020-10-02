@@ -29,6 +29,7 @@ const Routes = () => (
       <PrivateRoute exact path="/main" component={() => <Main/>}/>
       <PrivateRoute exact path="/games" component={() => <Games/>}/>
       <PrivateRoute exact path="/records" component={() => <Records/>}/>
+      <Route path="/*" component={() => <Redirect to path='/'>{alert('Page Not Found')}</Redirect>}/>
     </Switch>
   </BrowserRouter>
 );
