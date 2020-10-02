@@ -6,7 +6,7 @@ import { isAuthenticated } from "./services/auth";
 import Login from './pages/login/index'
 import Main from './pages/main/index'
 import Games from './pages/games/index'
-import Records from './pages/records/records'
+import Records from './pages/records'
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (

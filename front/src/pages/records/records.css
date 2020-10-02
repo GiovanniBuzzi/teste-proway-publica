@@ -1,0 +1,15 @@
+.records{
+    width:100%;
+    overflow: auto;
+    height: 100%;
+}
+
+.records .tablesBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recordsCards{
+    display: flex;
+}
