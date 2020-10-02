@@ -1,6 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 
-import api from '../../services/api'
+import api from '../../services/api';
+
+import Header from '../../components/header/Header';
+import Card from '../../components/cards/Cards';
+import AddGame from '../../components/addGame/AddGame';
+
+import './games.css';
 
 const Games = () => {
 
@@ -9,8 +15,8 @@ const Games = () => {
 
     useEffect(() => {
         const fetchMatches = async() => {
-            const result = await api
-                .get(`/matches/`+sessionStorage.getItem('user_id'))
+            await api
+                .get(`/matches/` + sessionStorage.getItem('user_id'))
                 .then((response) => setMatches(response.data.matches));
         };
 
@@ -18,25 +24,40 @@ const Games = () => {
     }, []);
 
     return (
-
-        <div>
-            <table>
-                <tbody>
-                    {matches.length > 0 ? (
-                    matches.map((match) => (
-                        <tr key={match.id}>
-                            <td></td>
-                            <td>{match.adversary}</td>
-                            <td>{match.points}</td>
-                        </tr>
-                    ))
-                    ): (
-                        <tr>
-                            <td colSpan={3}>No Matches</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
+        <div className='games'>
+            <Header/>
+            <div className='table-box'>
+                <div
+                    style={{
+                    width: '42%%',
+                    height: '90%',
+                    overflow: 'auto'
+                }}>
+                    <table id='customers'>
+                        <tbody>
+                            <tr>
+                                <th>Match</th>
+                                <th>Adversary</th>
+                                <th>Points</th>
+                            </tr>
+                            {matches.length > 0
+                                ? (matches.map((match, i) => (
+                                    <tr key={match.id}>
+                                        <td>{i + 1}</td>
+                                        <td>{match.adversary}</td>
+                                        <td>{match.points}</td>
+                                    </tr>
+                                )))
+                                : (
+                                    <tr>
+                                        <td colSpan={3}>No Matches</td>
+                                    </tr>
+                                )}
+                        </tbody>
+                    </table>
+                </div>
+                <Card body={<AddGame/>} image='https://i.pinimg.com/originals/70/87/25/70872576ac41b7c6dfd8dfd5f200f024.png'></Card>
+            </div>
         </div>
     )
 }

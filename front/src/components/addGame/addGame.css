@@ -1,0 +1,53 @@
+.addGame {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form3 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.form3 input {
+    width: 86%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.form3 label {
+    font-size: 2rem;
+}
+.form3 input:hover {
+    background-color: whitesmoke;
+    opacity: 1;
+}
+.form3 button {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 10px;
+    background-color: orange;
+    border-radius: 20px;
+}
+.form3 button:hover {
+    background-color:orangered;
+}
+

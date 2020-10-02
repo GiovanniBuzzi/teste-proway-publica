@@ -4,13 +4,13 @@ import api from '../../services/api'
 
 import './login.css'
 
-function Login(props) {
+function Login() {
 
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleLogin(props){
-        const log = api.post('/users/login',{login:user, password:password})
+    function handleLogin(){
+        api.post('/users/login',{login:user, password:password})
         .then((response) => doRedirect(response))
         .catch(localStorage.setItem('login',false));    
     }

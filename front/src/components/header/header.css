@@ -29,3 +29,9 @@
 .botao:hover{
     color:gray;
 }
+
+.logout{
+    display: flex;
+    justify-content: space-between;
+    width: 10%; 
+}
