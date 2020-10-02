@@ -69,14 +69,13 @@ module.exports = {
 
     async records(req,res){
 
-        const max_season = await User.findAll({limit: 3, order: [[ 'max_season', 'DESC' ]],
-        attributes: ['name','max_record'], 
-        include: {association: 'matches', limit: 3, order:[['points', 'DESC']], attributes:['points','adversary']}});
+        const max_season = await User.findAll({limit: 5, order: [[ 'max_season', 'DESC' ]],
+        attributes: ['name'], 
+        include: {association: 'matches', limit: 1, order:[['points', 'DESC']], attributes:['points','adversary']}});
 
-        const min_season = await User.findAll({limit: 3, order: [[ 'min_season', 'DESC' ]],
-        attributes: ['name','min_record'], 
-        include: {association: 'matches', limit: 3, order:[['points', 'ASC']], attributes:['points','adversary']}});
-
+        const min_season = await User.findAll({limit: 5, order: [[ 'min_season', 'DESC' ]],
+        attributes: ['name'], 
+        include: {association: 'matches', limit: 1, order:[['points', 'ASC']], attributes:['points','adversary']}});
 
         if(!max_season || !min_season){
             return res.status(400).json({ error: 'Users not found'});

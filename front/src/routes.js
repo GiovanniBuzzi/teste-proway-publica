@@ -6,7 +6,8 @@ import { isAuthenticated } from "./services/auth";
 import Login from './pages/login/index'
 import Main from './pages/main/index'
 import Games from './pages/games/index'
-import Records from './pages/records'
+import Records from './pages/records/index'
+import GeneralRecords from './pages/generalRecords/index'
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -29,6 +30,7 @@ const Routes = () => (
       <PrivateRoute exact path="/main" component={() => <Main/>}/>
       <PrivateRoute exact path="/games" component={() => <Games/>}/>
       <PrivateRoute exact path="/records" component={() => <Records/>}/>
+      <PrivateRoute exact path="/general-records" component={() => <GeneralRecords/>}/>
       <Route path="/*" component={() => <Redirect to path='/'>{alert('Page Not Found')}</Redirect>}/>
     </Switch>
   </BrowserRouter>

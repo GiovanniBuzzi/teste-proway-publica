@@ -1,0 +1,16 @@
+.generalRecords{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.tablesBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+
+.padding{
+    width: 50px;
+}

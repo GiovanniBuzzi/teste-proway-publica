@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: ease-in 1s;
 }
 
 .form3 {
@@ -13,6 +14,7 @@
     flex-direction: column;
     border-radius: 20px;
     text-align: center;
+    transition: ease-in 1s;
 }
 
 .form3 input {
@@ -28,6 +30,7 @@
     text-decoration: none;
     box-shadow: 1px 1px 1px 1px black;
 }
+
 
 .form3 label {
     font-size: 2rem;
