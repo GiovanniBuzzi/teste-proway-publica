@@ -6,6 +6,7 @@ const Header = () => {
 
     function doLogout(){
         sessionStorage.removeItem('user_name');
+        sessionStorage.removeItem('token_jwt');
         sessionStorage.removeItem('user_id');
         localStorage.removeItem('login');
 

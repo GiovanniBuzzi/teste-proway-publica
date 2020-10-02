@@ -1,6 +1,9 @@
 const { response } = require('express');
 const User = require('../models/User');
 const Team = require('../models/Team');
+
+var jwt = require('jsonwebtoken');
+
 const { Op } = require("sequelize");
 
 module.exports = {
@@ -40,7 +43,6 @@ module.exports = {
 
     async login(req,res){
         const {login, password} = req.body;
-
         if(login == null || password == null){
             return res.status(400).json({ error: 'Login/Password Null ???'});
         }
@@ -52,7 +54,11 @@ module.exports = {
         }
 
         if(user.password == password){
-            return res.json({auth:true, user_id:user.id, user_name:user.name});
+            const id = user.id;
+            var token = jwt.sign({id}, 'tokenteste', {
+                expiresIn: 1200
+            });
+            return res.json({auth:true, token: token, user_id:user.id, user_name:user.name});
         }
 
         return res.status(400).json({ error: 'Invalid Password'});

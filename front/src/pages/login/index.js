@@ -18,6 +18,7 @@ function Login() {
     function doRedirect(response){
         if(response.data.auth === true){
             localStorage.setItem('login',response.data.auth);
+            sessionStorage.setItem('@token_jwt',response.data.token);
             sessionStorage.setItem('user_name',response.data.user_name);
             sessionStorage.setItem('user_id',response.data.user_id);
 

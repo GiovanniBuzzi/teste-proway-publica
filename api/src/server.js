@@ -4,7 +4,7 @@ const express = require('express');
 const routes = require('./routes');
 const cors = require('cors');
 
-//// Inserção de dependencias no server
+
 require('./database/index');
 
 const app = express();
