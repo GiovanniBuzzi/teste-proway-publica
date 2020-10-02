@@ -9,6 +9,13 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+      id_team: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {model: 'teams', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+      },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -23,19 +30,15 @@ module.exports = {
       },
       min_season: {
         type: Sequelize.INTEGER,
-        allowNull: false,
       },
       max_season: {
         type: Sequelize.INTEGER,
-        allowNull: false,
       },
       min_record: {
         type: Sequelize.INTEGER,
-        allowNull: false,
       },
       max_record: {
         type: Sequelize.INTEGER,
-        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,

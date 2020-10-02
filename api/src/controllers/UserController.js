@@ -1,5 +1,6 @@
 const { response } = require('express');
 const User = require('../models/User');
+const Team = require('../models/Team');
 
 module.exports = {
 
@@ -12,9 +13,9 @@ module.exports = {
     },
     
     async store(req,res){
-        const {name,login,password} = req.body;
+        const {name,login,password,team} = req.body;
 
-        if(name==null || login==null || password==null){
+        if(name==null || login==null || password==null || team==null){
             return res.status(400).json({ error: 'Store Error'})
         }
 
@@ -24,7 +25,13 @@ module.exports = {
             return res.status(400).json({ error: 'This Login Exist'})
         }
 
-        const user = await User.create({name,login,password});
+        const teams = await Team.findOne({where:{name:team}});
+
+        if(!teams){
+            return res.status(400).json({ error: 'This team dont exist'})
+        }
+
+        const user = await User.create({name,login,password,id_team:teams.id});
 
         return res.json({message: 'Success', user});
 
@@ -55,11 +62,11 @@ module.exports = {
 
         const user_max = await User.findOne({where:{id:req.params.id_user},
             attributes:['max_season','max_record'],
-            include: {association:'matches', limit: 5, order:[['points','DESC']], attributes:['points','adversary']}});
+            include: {association:'matches', limit: 5, order:[['points','DESC']], attributes:['points','id_adversary']}});
 
         const user_min = await User.findOne({where:{id:req.params.id_user},
             attributes:['min_season','min_record'],
-            include: {association:'matches', limit: 5, order:[['points','ASC']], attributes:['points','adversary']}});
+            include: {association:'matches', limit: 5, order:[['points','ASC']], attributes:['points','id_adversary']}});
 
         if(!user_max || !user_min){
             return res.status(400).json({ error: 'This user dont exist'});
@@ -71,11 +78,14 @@ module.exports = {
 
         const max_season = await User.findAll({limit: 5, order: [[ 'max_season', 'DESC' ]],
         attributes: ['name'], 
-        include: {association: 'matches', limit: 1, order:[['points', 'DESC']], attributes:['points','adversary']}});
+        include:[{association: 'team', attributes:['name']},
+        {association: 'matches', include:{association: 'adversary', attributes:['name']}, limit: 1, order:[['points', 'DESC']], attributes:['points','id_adversary']}]});      
 
-        const min_season = await User.findAll({limit: 5, order: [[ 'min_season', 'DESC' ]],
+        const min_season = await User.findAll({limit: 5, order: [[ 'min_season', 'ASC' ]],
         attributes: ['name'], 
-        include: {association: 'matches', limit: 1, order:[['points', 'ASC']], attributes:['points','adversary']}});
+        include:[{association: 'team', attributes:['name']},
+        {association: 'matches', include:{association: 'adversary', attributes:['name']}, limit: 1, order:[['points', 'ASC']], attributes:['points','id_adversary']}]});      
+
 
         if(!max_season || !min_season){
             return res.status(400).json({ error: 'Users not found'});

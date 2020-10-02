@@ -16,12 +16,15 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      points: {
+      id_adversary: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {model: 'teams', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
       },
-      adversary:{
-        type: Sequelize.STRING,
+      points: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       created_at: {

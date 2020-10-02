@@ -16,6 +16,7 @@ class User extends Model {
     }
     static associate(models){
         this.hasMany(models.Match, {foreignKey: 'id_user', as: 'matches'});
+        this.belongsTo(models.Team, {foreignKey: 'id_team', as: 'team'});
     }
 }
 
