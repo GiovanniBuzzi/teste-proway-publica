@@ -45,7 +45,7 @@ yarn dev
 O comando está pré configurado pelo nodemon para executar o servidor a cada save.
 A api ja está funcionando e ouvindo na porta 3334.
 
-Agora que a api está sendo executada, existe uma rota /start para startar o banco de dados com valores default, essa rota pode ser executada pelo navegador ou por outros programas como isomnia ou postman... (é uma requisição get)
+Agora que a api está sendo executada, existe uma rota /start para startar o banco de dados com valores default, essa rota pode ser executada pelo navegador ou por outros programas como isomnia ou postman... (é uma requisição get, por exemplo, http://localhost:3334/start )
 Como é uma rota apenas para iniciar o banco execute ela APENAS UMA vez, pois senão causara conflito no banco.
 
 Agora entre na pasta front e execute o comando:
