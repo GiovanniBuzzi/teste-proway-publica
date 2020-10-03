@@ -5,48 +5,75 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-O projeto tem uma página de autenticação onde é possível cadastrar usuários, entrando na aplicação usuários comums podem controlar seus pontos em jogos de basquete
-contra times ja cadastrados no sistema além disso é possível acompanhar os usuários com maiores pontuações. Cadastro de times só podem ser feitos por super usuários.
+O projeto tem uma página de autenticação onde é possível cadastrar usuários, entrando na aplicação usuários comums podem controlar seus pontos em jogos de basquete (quantidade marcada, adversário, partidas com mais pontos, menos pontos etc.) contra times ja cadastrados no sistema além disso é possível acompanhar os usuários com maiores pontuações. Cadastro de times só podem ser feitos por super usuários.
 
 ![](../header.png)
 
-## Instalação
+## Dependencias usadas no projeto
 
-Windows (necessários NodeJS, yarn/npm, mysql):
+Api: Express, Sequelize, Sequelize-cli, Mysql2, jsonwebtoken, cors, dotenv-safe e nodemon.
 
-```sh
-Na pasta front: yarn install ou npm install
-```
+Front: npx create-react-app . Axios, React-Router-Dom
 
-## Configuração do Banco
+## Necessário para aplicação
 
-É necessário colocar os dados do banco de dados MySQL instalado na sua maquina ou na nuvem.
+Windows (necessários NodeJS, yarn, mysql):
+
+## Configuração do banco de dados
+
+É necessário colocar os dados de acesso ao banco de dados MySQL instalado na sua maquina ou na nuvem.
 
 _Para mais exemplos, consulte a [Wiki][wiki]._ 
 
-## Configuração para Desenvolvimento
+## Fazendo as migrations do banco de dados
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Após configurar o usuário do banco é ncessário criar o database e as tabelas através dos seguintes comandos:
 
 ```sh
-make install
-npm test
+yarn sequelize db:create
+``````sh
+yarn sequelize db:migration
 ```
 
-## Histórico de lançamentos
+Caso aconteça algum erro no banco, devido a inserção de dados ou algo do genêro, para destruir as migrations execute o seguinte comando
 
-* 0.2.1
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1
-    * Trabalho em andamento
+```sh
+yarn sequelize db:migration:undo
+```
+Para cada migration.
+
+## Compilando a aplicação API
+
+Após clonar o projeto e configurar o banco entrar na pasta api e executar o comando:
+
+```sh
+yarn dev
+```
+O comando está pré configurado pelo nodemon para executar o servidor a cada save.
+A api ja está funcionando e ouvindo na porta 3334.
+
+Agora que a api está sendo executada, existe uma rota /start para startar o banco de dados com valores default, essa rota pode ser executada pelo navegador ou por outros programas como isomnia ou postman... (é uma requisição get)
+Como é uma rota apenas para iniciar o banco execute ela APENAS UMA vez, pois senão causara conflito no banco.
+
+Agora entre na pasta front e execute o comando:
+
+```sh
+yarn install
+```
+Esse comando ficará responsavel por instalar as dependências do projeto.
+Então ainda na pasta front basta executar o comando:
+
+```sh
+yarn start
+```
+
+Lembrando que a aplicação vai rodar na porta 3000 do seu localhost.
+
+## Utilizando a aplicação
+
+# Pagina de login
+
+Para
 
 ## Meta
 
