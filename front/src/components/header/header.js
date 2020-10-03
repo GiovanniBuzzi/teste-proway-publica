@@ -10,7 +10,7 @@ const Header = () => {
 
     function doLogout(){
         sessionStorage.removeItem('user_name');
-        sessionStorage.removeItem('token_jwt');
+        sessionStorage.removeItem('@token_jwt');
         sessionStorage.removeItem('user_id');
         sessionStorage.removeItem('su');
         localStorage.removeItem('login');

@@ -70,7 +70,7 @@ module.exports = {
             //// se for o super usuario ele seta su para true
             //// (problemas ao utilizar o arquivo .env com os segredos)
             //// deixei numérico mesmo
-            if(user.id==4)
+            if(user.id==1)
                 su=true;
             
             return res.json({auth:true, token: token, user_id:user.id, user_name:user.name, su:su});

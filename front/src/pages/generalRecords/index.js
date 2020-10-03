@@ -6,10 +6,10 @@ import Header from '../../components/header/Header';
 
 import './generalRecords.css';
 
-////// pagina para apresentar os recordes globais (melhores entre os usuarios)
-///// como ja dito é um acesso a api onde se tudo ocorre corretamente
-//// os dados são colocados nas variaveis de estado
-//// as mesmas sao mapeadas e colocadas a disposição dos usuarios
+// //// pagina para apresentar os recordes globais (melhores entre os usuarios)
+// /// como ja dito é um acesso a api onde se tudo ocorre corretamente // os
+// dados são colocados nas variaveis de estado // as mesmas sao mapeadas e
+// colocadas a disposição dos usuarios
 
 const GeneralRecords = () => {
 
@@ -60,19 +60,12 @@ const GeneralRecords = () => {
                                     <tr key={user.id}>
                                         <td>{i + 1}</td>
                                         <td>{user.name}</td>
-                                        {user.matches.length >= i - 1
-                                            ? (user.matches.map((match, u) => (
-                                                <Fragment key={u}>
-                                                    <td>{[match.adversary.name]}</td>
-                                                    <td>{match.points}</td>
-                                                </Fragment>
-                                            )))
-                                            : <td
-                                                style={{
-                                                textAlign: 'center'
-                                            }}
-                                                colSpan={2}>
-                                                No Matches</td>}
+                                        {(user.matches.map((match, u) => (
+                                            <Fragment key={u}>
+                                                <td>{[match.adversary.name]}</td>
+                                                <td>{match.points}</td>
+                                            </Fragment>
+                                        )))}
                                     </tr>
                                 )))
                                 : (
@@ -109,19 +102,12 @@ const GeneralRecords = () => {
                                     <tr key={user.id}>
                                         <td>{i + 1}</td>
                                         <td>{user.name}</td>
-                                        {user.matches.length >= i - 1
-                                            ? (user.matches.map((match, u) => (
+                                            {(user.matches.map((match, u) => (
                                                 <Fragment key={u}>
                                                     <td>{[match.adversary.name]}</td>
                                                     <td>{match.points}</td>
                                                 </Fragment>
-                                            )))
-                                            : <td
-                                                style={{
-                                                textAlign: 'center'
-                                            }}
-                                                colSpan={2}>
-                                                No Matches</td>}
+                                            )))}
                                     </tr>
                                 )))
                                 : (

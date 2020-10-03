@@ -3,6 +3,7 @@
 const MatchController = require('./controllers/MatchController');
 const UserController = require('./controllers/UserController');
 const TeamController = require('./controllers/TeamController');
+const StartController = require('./controllers/StartController');
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
@@ -27,7 +28,7 @@ function verifyJWT(req, res, next) {
                     .json({auth: false, message: 'User conflit'});
             }
 
-            if(decoded.id == 4){
+            if(decoded.id == 1){
                 req.params.su = true;
             }else{
                 req.params.su = false;
@@ -38,6 +39,10 @@ function verifyJWT(req, res, next) {
 }
 
 const routes = express.Router();
+
+//////////////////////ROTA PARA INSERSÃO DEFAULT NO DATABASE
+routes.get('/start',StartController.index);
+////////////////////////////////////////////////////////////
 
 ///Rotas para manipulação dos jogos
 routes.get('/matches/:id_user', verifyJWT, MatchController.index);
