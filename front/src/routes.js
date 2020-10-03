@@ -9,6 +9,7 @@ import Games from './pages/games/index'
 import Records from './pages/records/index'
 import GeneralRecords from './pages/generalRecords/index'
 import SignUp from './pages/signUp/index'
+import Team from './pages/teams/index'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -32,6 +33,7 @@ const Routes = () => (
       <PrivateRoute exact path="/games" component={() => <Games/>}/>
       <PrivateRoute exact path="/records" component={() => <Records/>}/>
       <PrivateRoute exact path="/general-records" component={() => <GeneralRecords/>}/>
+      <PrivateRoute exact path="/teams" component={() => <Team/>}/>
       <Route path="/*" component={() => <Redirect to path='/'>{alert('Page Not Found')}</Redirect>}/>
     </Switch>
   </BrowserRouter>

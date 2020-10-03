@@ -25,6 +25,7 @@ function Login() {
             sessionStorage.setItem('@token_jwt',response.data.token);
             sessionStorage.setItem('user_name',response.data.user_name);
             sessionStorage.setItem('user_id',response.data.user_id);
+            sessionStorage.setItem('su', response.data.su);
 
             window.location.replace('/main');
         }

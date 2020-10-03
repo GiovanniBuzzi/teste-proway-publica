@@ -21,7 +21,9 @@ const Main = () => {
                     <Link to='/games' style={{textDecoration:'none'}}><Card body="My Games" image={Img1}/></Link>
                     <Link to='/records' style={{textDecoration:'none'}}><Card body="My Records" image={Img2}/></Link>
                     <Link to='/general-records' style={{textDecoration:'none'}}><Card body="General Records" image={Img3}/></Link>
-                    <Link to='/general-records' style={{textDecoration:'none'}}><Card body="General Records" image={Img4}/></Link>
+                    {sessionStorage.getItem('su') === 'true' ?
+                        <Link to='/teams' style={{textDecoration:'none'}}><Card body="Teams" image={Img4}/></Link>
+                    : <></>}
                 </div>
             </div>
         </div>

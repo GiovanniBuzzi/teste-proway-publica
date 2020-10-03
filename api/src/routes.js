@@ -22,8 +22,15 @@ function verifyJWT(req, res, next) {
             if (decoded.id != req.params.id_user) {
                 return res
                     .status(500)
-                    .json({auth: false, message: 'Nada disso safado'});
+                    .json({auth: false, message: 'User conflit'});
             }
+
+            if(decoded.id == 4){
+                req.params.su = true;
+            }else{
+                req.params.su = false;
+            }
+
             next();
         });
 }
@@ -42,6 +49,6 @@ routes.post('/users', UserController.store);
 routes.post('/users/login', UserController.login);
 
 routes.get('/teams', TeamController.index);
-routes.post('/teams', TeamController.store);
+routes.post('/teams/:id_user', verifyJWT, TeamController.store);
 
 module.exports = routes;

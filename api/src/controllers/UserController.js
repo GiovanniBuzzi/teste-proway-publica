@@ -58,7 +58,11 @@ module.exports = {
             var token = jwt.sign({id}, 'tokenteste', {
                 expiresIn: 1200
             });
-            return res.json({auth:true, token: token, user_id:user.id, user_name:user.name});
+            var su = false;
+            if(user.id==4)
+                su=true;
+            
+            return res.json({auth:true, token: token, user_id:user.id, user_name:user.name, su:su});
         }
 
         return res.status(400).json({ error: 'Invalid Password'});

@@ -14,21 +14,26 @@ module.exports = {
     },
 
     async store(req,res){
-        const {name} = req.body;
 
-        if(name==null){
+        if(!req.params.su){
+            return res.status(400).json({error: 'Only admin can resgiter a team'});
+        }
+
+        const {team} = req.body;
+
+        if(team==null){
             return res.status(400).json({ error: 'Store Error'})
         }
 
-        const teams = await Team.findOne({where:{name:name}});
+        const teams = await Team.findOne({where:{name:team}});
 
         if(teams != null){
             return res.status(400).json({ error: 'This Team Exist'})
         }
 
-        const team = await Team.create({name});
+        const teamm = await Team.create({name:req.body.team});
 
-        return res.json({message: 'Success', team});
+        return res.json({message: 'Success', teamm});
 
     },
 

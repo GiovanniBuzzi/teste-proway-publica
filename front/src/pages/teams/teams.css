@@ -1,0 +1,46 @@
+.teams {
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+}
+
+.table-box {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+tbody,
+thead {
+    font-size: 2rem;
+    font-family: 'Bangers', cursive;
+}
+
+tbody {
+    display: flow-root;
+}
+
+#customers {
+    border-collapse: collapse;
+    width: 70%;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid black;
+    padding: 30px;
+}
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: black;
+}
