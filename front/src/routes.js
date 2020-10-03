@@ -2,16 +2,16 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 ///// importação de serviço para autenticação de login
-import { isAuthenticated } from "./services/auth";
+import { isAuthenticated } from "./services/auth.js";
 
 //////// importação de paginas e componentes
-import Login from './pages/login/index'
-import Main from './pages/main/index'
-import Games from './pages/games/index'
-import Records from './pages/records/index'
-import GeneralRecords from './pages/generalRecords/index'
-import SignUp from './pages/signUp/index'
-import Team from './pages/teams/index'
+import Login from './pages/login/index.js'
+import Main from './pages/main/index.js'
+import Games from './pages/games/index.js'
+import Records from './pages/records/index.js'
+import GeneralRecords from './pages/generalRecords/index.js'
+import SignUp from './pages/signUp/index.js'
+import Team from './pages/teams/index.js'
 
 
 /////// Componente para validação de rota privada

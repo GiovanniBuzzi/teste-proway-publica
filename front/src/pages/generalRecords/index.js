@@ -1,8 +1,8 @@
 import React, {useState, useEffect, Fragment} from 'react';
 
-import api from '../../services/api';
+import api from '../../services/api.js';
 
-import Header from '../../components/header/Header';
+import Header from '../../components/header/Header.js';
 
 import './generalRecords.css';
 

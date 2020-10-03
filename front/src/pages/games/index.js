@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 
 import api from '../../services/api';
 
-import Header from '../../components/header/Header';
-import Card from '../../components/cards/Cards';
-import AddGame from '../../components/addGame/AddGame';
+import Header from '../../components/header/Header.js';
+import Card from '../../components/cards/Cards.js';
+import AddGame from '../../components/addGame/AddGame.js';
 
 import Img1 from '../../images/6.jpg'
 

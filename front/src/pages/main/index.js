@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import Header from '../../components/header/Header';
-import Card from '../../components/cards/Cards';
+import Header from '../../components/header/Header.js';
+import Card from '../../components/cards/Cards.js';
 
 import Img1 from '../../images/7.jpg';
 import Img2 from '../../images/6.jpg';

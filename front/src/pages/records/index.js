@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 
 import api from '../../services/api';
 
-import Header from '../../components/header/Header';
-import Card from '../../components/cards/Cards';
+import Header from '../../components/header/Header.js';
+import Card from '../../components/cards/Cards.js';
 
 import Img1 from '../../images/1.jpg'
 import Img2 from '../../images/2.jpg'

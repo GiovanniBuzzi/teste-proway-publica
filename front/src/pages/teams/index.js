@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
-import api from '../../services/api';
+import api from '../../services/api.js';
 
-import Header from '../../components/header/Header';
-import Card from '../../components/cards/Cards';
-import AddTeam from '../../components/addTeam/AddTeam';
+import Header from '../../components/header/Header.js';
+import Card from '../../components/cards/Cards.js';
+import AddTeam from '../../components/addTeam/AddTeam.js';
 
 import Img1 from '../../images/6.jpg'
 
