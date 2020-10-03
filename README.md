@@ -31,7 +31,6 @@ Após configurar o usuário do banco é ncessário criar o database e as tabelas
 
 ```sh
 yarn sequelize db:create
-``````sh
 yarn sequelize db:migration
 ```
 
@@ -71,7 +70,7 @@ Lembrando que a aplicação vai rodar na porta 3000 do seu localhost.
 
 ## Utilizando a aplicação
 
-# Pagina de login
+### Pagina de login
 
 Para
 
