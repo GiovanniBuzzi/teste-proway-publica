@@ -14,24 +14,23 @@ Front: npx create-react-app . Axios, React-Router-Dom
 
 ## Necessário para aplicação
 
-NodeJS, yarn, Banco de dados MySQL
+NodeJS, yarn, Banco de dados MySQL.
 
 ## Configuração do banco de dados
 
-É necessário colocar os dados de acesso ao banco de dados MySQL instalado na sua maquina ou na nuvem.
+É necessário colocar os dados de acesso ao banco de dados no diretorio: api\src\config\database.js.
 
-_Para mais exemplos, consulte a [Wiki][wiki]._ 
 
 ## Fazendo as migrations do banco de dados
 
-Após configurar o usuário do banco é ncessário criar o database e as tabelas através dos seguintes comandos:
+Após configurar o usuário do banco é necessário criar o database e as tabelas através dos seguintes comandos:
 
 ```sh
 yarn sequelize db:create
 yarn sequelize db:migration
 ```
 
-Caso aconteça algum erro no banco, devido a inserção de dados ou algo do genêro, para destruir as migrations execute o seguinte comando
+Caso aconteça algum erro no banco, devido a inserção de dados ou algo do genêro, para destruir as migrations execute:
 
 ```sh
 yarn sequelize db:migration:undo
@@ -40,7 +39,7 @@ Para cada migration.
 
 ## Compilando a aplicação API
 
-Após clonar o projeto e configurar o banco entrar na pasta api e executar o comando:
+Após clonar o projeto e configurar o banco entrar na pasta api e executar:
 
 ```sh
 yarn dev
