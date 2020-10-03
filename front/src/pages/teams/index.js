@@ -66,7 +66,7 @@ const Teams = () => {
                         </tbody>
                     </table>
                 </div>
-                <Card body={<AddTeam/>} image={Img1}></Card>
+                {sessionStorage.getItem('su') === 'true' ? <Card body={<AddTeam/>} image={Img1}></Card>: <></>}
             </div>
         </div>
     )
