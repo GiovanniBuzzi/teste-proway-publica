@@ -15,6 +15,10 @@ function Login() {
         .catch(localStorage.setItem('login',false));    
     }
 
+    function handleSignUp(){
+        window.location.replace('/sign-up');
+    }
+
     function doRedirect(response){
         if(response.data.auth === true){
             localStorage.setItem('login',response.data.auth);
@@ -38,7 +42,8 @@ function Login() {
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
                     <p></p>
                     <div className='botao'>
-                        <button onClick={handleLogin}><h1>Login</h1></button>
+                        <button onClick={handleLogin}><h1>Sign In</h1></button>
+                        <button onClick={handleSignUp}><h1>Sign Up</h1></button>
                     </div>
                 </form>
             </div>

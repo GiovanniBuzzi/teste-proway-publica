@@ -13,7 +13,7 @@ const AddGame = () => {
     function newGame(){
         api.post('/matches/'+sessionStorage.getItem('user_id'),{points,adversary})
         .then((response) => alert(response.data.message))
-        .catch((response) => alert('bla'))
+        .catch((response) => alert(response.response.request.response));
         
     }
 

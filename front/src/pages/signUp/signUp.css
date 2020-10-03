@@ -1,8 +1,10 @@
-.login {
-    height: 100vh;
+.signUp {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    overflow: auto;
 }
 
 .form {
@@ -15,6 +17,7 @@
     border-radius: 20px;
     box-shadow: 5px 5px 5px 5px black;
     text-align: center;
+    width: 30%;
 }
 
 .form input {
@@ -31,9 +34,6 @@
     box-shadow: 1px 1px 1px 1px black;
 }
 
-.form label {
-    font-size: 2rem;
-}
 .form input:hover {
     background-color: whitesmoke;
     opacity: 1;

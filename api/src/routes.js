@@ -34,10 +34,10 @@ routes.get('/matches/:id_user', verifyJWT, MatchController.index);
 routes.post('/matches/:id_user', verifyJWT, MatchController.store);
 
 ///Rotas para manipulação dos usuarios
-routes.get('/users', verifyJWT, UserController.index);
+routes.get('/users', UserController.index);
 routes.get('/users/records/:id_user', verifyJWT, UserController.record);
-routes.get('/users/records', verifyJWT, UserController.records);
-routes.post('/users', verifyJWT, UserController.store);
+routes.get('/users/records', UserController.records);
+routes.post('/users', UserController.store);
 routes.post('/users/login', UserController.login);
 
 module.exports = routes;

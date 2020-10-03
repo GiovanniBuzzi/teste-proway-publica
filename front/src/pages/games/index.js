@@ -6,6 +6,8 @@ import Header from '../../components/header/Header';
 import Card from '../../components/cards/Cards';
 import AddGame from '../../components/addGame/AddGame';
 
+import Img1 from '../../images/6.jpg'
+
 import './games.css';
 
 const Games = () => {
@@ -17,16 +19,20 @@ const Games = () => {
         const fetchMatches = async() => {
             await api
                 .get(`/matches/` + sessionStorage.getItem('user_id'))
-                .then((response) => setMatches(response.data.matches));
+                .then((response) => setMatches(response.data.matches))
+                .catch((response) => alert(response.response.request.response));
         };
 
         fetchMatches();
     }, []);
 
+    function setMessage(message){
+        console.log(message.response.request.response);
+    }
+
     return (
         <div className='games'>
             <Header/>
-            {console.log(matches)}
             <div className='table-box'>
                 <div
                     style={{
@@ -57,7 +63,7 @@ const Games = () => {
                         </tbody>
                     </table>
                 </div>
-                <Card body={<AddGame/>} image='https://i.pinimg.com/originals/70/87/25/70872576ac41b7c6dfd8dfd5f200f024.png'></Card>
+                <Card body={<AddGame/>} image={Img1}></Card>
             </div>
         </div>
     )

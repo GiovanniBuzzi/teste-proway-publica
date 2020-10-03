@@ -8,7 +8,7 @@ import Main from './pages/main/index'
 import Games from './pages/games/index'
 import Records from './pages/records/index'
 import GeneralRecords from './pages/generalRecords/index'
-
+import SignUp from './pages/signUp/index'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -27,6 +27,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={() => <Login/>} />
+      <Route exact path="/sign-up" component={() => <SignUp/>} />
       <PrivateRoute exact path="/main" component={() => <Main/>}/>
       <PrivateRoute exact path="/games" component={() => <Games/>}/>
       <PrivateRoute exact path="/records" component={() => <Records/>}/>

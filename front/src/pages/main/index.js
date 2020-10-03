@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import Card from '../../components/cards/Cards';
 
+import Img1 from '../../images/7.jpg';
+import Img2 from '../../images/6.jpg';
+import Img3 from '../../images/5.jpg';
+
 import './main.css';
 
 const Main = () => {
@@ -13,9 +17,9 @@ const Main = () => {
             <Header/>
             <div className='boxcards'>
                 <div className='cards'>
-                    <Link to='/games' style={{textDecoration:'none'}}><Card body="My Games" image="https://i.pinimg.com/564x/f2/78/2e/f2782effef25f4f3ec7b90b8fcfc1ce5.jpg"/></Link>
-                    <Link to='/records' style={{textDecoration:'none'}}><Card body="My Records" image="https://i.pinimg.com/originals/eb/f0/86/ebf0868d6e166eb6751b4904dc6df3d0.jpg"/></Link>
-                    <Link to='/general-records' style={{textDecoration:'none'}}><Card body="General Records" image="https://s2.best-wallpaper.net/wallpaper/iphone/1709/Graffiti-hands-basketball-net-creative_iphone_750x1334.jpg"/></Link>
+                    <Link to='/games' style={{textDecoration:'none'}}><Card body="My Games" image={Img1}/></Link>
+                    <Link to='/records' style={{textDecoration:'none'}}><Card body="My Records" image={Img2}/></Link>
+                    <Link to='/general-records' style={{textDecoration:'none'}}><Card body="General Records" image={Img3}/></Link>
                 </div>
             </div>
         </div>

@@ -17,7 +17,8 @@ const GeneralRecords = () => {
         const fetchRecords = async() => {
             await api
                 .get(`/users/records/`)
-                .then((response) => setValues(response.data));
+                .then((response) => setValues(response.data))
+                .catch((response) => alert(response.response.request.response));
 
         };
 
@@ -31,8 +32,7 @@ const GeneralRecords = () => {
 
     return (
         <div className='generalRecords'>
-            <Header/> {console.log(usersMax)}
-            {console.log(usersMin)}
+            <Header/>
             <div className="tablesBox">
                 <div className='tableMax'>
                     <table id='customers'>

@@ -1,11 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 
-import api from '../../services/api'
+import api from '../../services/api';
 
-import Header from '../../components/header/Header'
-import Card from '../../components/cards/Cards'
+import Header from '../../components/header/Header';
+import Card from '../../components/cards/Cards';
 
-import './records.css'
+import Img1 from '../../images/1.jpg'
+import Img2 from '../../images/2.jpg'
+import Img3 from '../../images/3.jpeg'
+import Img4 from '../../images/4.jpg'
+
+
+import './records.css';
 
 const Records = () => {
 
@@ -22,8 +28,8 @@ const Records = () => {
         const fetchRecords = async() => {
             await api
                 .get(`/users/records/` + sessionStorage.getItem('user_id'))
-                .then((response) => setValues(response));
-
+                .then((response) => setValues(response))
+                .catch((response) => alert(response.response.request.response));
         };
 
         fetchRecords();
@@ -105,15 +111,15 @@ const Records = () => {
                 </div>
                 <div className='recordsCards'>
                     <div>
-                    <Card body={<div style={{textAlign:'center'}}>Max Season<p></p>{maxUserRecord.max_season}</div>}
-                            image='https://lh3.googleusercontent.com/proxy/jbhZCIWuPZOT3TTIpG9gbcD6J6yNmmP8PBjnKQz_NVmA0xBXl5aCunx-BaDf5hHQDlABwbhN1UNKzsMn3UXXI2w0krPSoKxyh-ahI4sofIKgp-QXQ_G7BoWUM-PIpYbsvm4BwM3k0YhhpZhiSLubDL2WqDb57pzZjlKy_NlMUwRB7KN55Uc_ty0dWw0BivphyNvhk1qVHn-ikQ'></Card>
-                    <Card body={<div style={{textAlign:'center'}}>Max Records<p></p>{maxUserRecord.max_record}</div>}
-                            image='https://fsb.zobj.net/crop.php?r=gq2OWvmwPLweGPVDxyd6q33Q9ywuBIap0k5TTAGFDhuroc1FT-y-9f1RZrnFb1wrlaa3hP8iPHVISRg-dqfMArDwv_yNlcrjsoS3kQkQVIJJLDA8hFs2NbtHPBiJnF3xJMF8y9Qzgg5EJwPG'></Card>
+                    <Card body={<div style={{textAlign:'center'}}><h1>Max Season</h1><p></p>{maxUserRecord.max_season}</div>}
+                            image={Img1}></Card>
+                    <Card body={<div style={{textAlign:'center'}}><h1>Max Records</h1><p></p>{maxUserRecord.max_record}</div>}
+                            image={Img2}></Card>
                     </div><div>
-                    <Card body={<div style={{textAlign:'center'}}>Min Season<p></p>{minUserRecord.min_season}</div>}
-                            image='https://c0.wallpaperflare.com/preview/643/322/447/people-playing-basketball-during-golden-hour.jpg'></Card>
-                    <Card body={<div style={{textAlign:'center'}}>Min Records<p></p>{minUserRecord.min_record}</div>}
-                            image='https://image.winudf.com/v2/image/Y29tLnNnbS5mcmVlYmFza2V0YmFsbHdhbGxwYXBlcnNfc2NyZWVuc2hvdHNfMTFfYjk1YjYzZmU/screen-11.jpg?fakeurl=1&type=.jpg'></Card>
+                    <Card body={<div style={{textAlign:'center'}}><h1>Min Season</h1><p></p>{minUserRecord.min_season}</div>}
+                            image={Img3}></Card>
+                    <Card body={<div style={{textAlign:'center'}}><h1>Min Records</h1><p></p>{minUserRecord.min_record}</div>}
+                            image={Img4}></Card>
                     </div>
                 </div>
             </div>
