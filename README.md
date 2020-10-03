@@ -1,9 +1,6 @@
 # Teste-Proway-Publica
 > Sistema Web (Front/Api) para controle de pontos em jogos de basquete
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
 O projeto tem uma página de autenticação onde é possível cadastrar usuários, entrando na aplicação usuários comums podem controlar seus pontos em jogos de basquete (quantidade marcada, adversário, partidas com mais pontos, menos pontos etc.) contra times ja cadastrados no sistema além disso é possível acompanhar os usuários com maiores pontuações. Cadastro de times só podem ser feitos por super usuários.
 
