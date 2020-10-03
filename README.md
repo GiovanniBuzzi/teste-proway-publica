@@ -4,17 +4,15 @@
 
 O projeto tem uma página de autenticação onde é possível cadastrar usuários, entrando na aplicação usuários comums podem controlar seus pontos em jogos de basquete (quantidade marcada, adversário, partidas com mais pontos, menos pontos etc.) contra times ja cadastrados no sistema além disso é possível acompanhar os usuários com maiores pontuações. Cadastro de times só podem ser feitos por super usuários.
 
-![](../header.png)
+## Necessário para rodar a aplicação
+
+NodeJS, yarn, Banco de dados MySQL.
 
 ## Dependencias usadas no projeto
 
 Api: Express, Sequelize, Sequelize-cli, Mysql2, jsonwebtoken, cors, dotenv-safe e nodemon.
 
 Front: npx create-react-app . Axios, React-Router-Dom
-
-## Necessário para aplicação
-
-NodeJS, yarn, Banco de dados MySQL.
 
 ## Configuração do banco de dados
 
@@ -37,7 +35,7 @@ yarn sequelize db:migration:undo
 ```
 Para cada migration.
 
-## Compilando a aplicação API
+## Executando a aplicação
 
 Após clonar o projeto e configurar o banco entrar na pasta api e executar:
 
