@@ -17,7 +17,7 @@ Front: npx create-react-app . Axios, React-Router-Dom
 
 ## Necessário para aplicação
 
-Windows (necessários NodeJS, yarn, mysql):
+NodeJS, yarn, Banco de dados MySQL
 
 ## Configuração do banco de dados
 
@@ -72,15 +72,41 @@ Lembrando que a aplicação vai rodar na porta 3000 do seu localhost.
 
 ### Pagina de login
 
-Para
+Opções para cadastro de usuários e logar na aplicação (O usuário maria (Login: maria, Password:maria) foi definido como root ganhando o privilégio de adicionar times ao banco)
+
+### Main
+
+Pagina main da aplicação que funciona como um menu.
+
+### Header
+
+Opção de logout e botão para voltar para pagina main da aplicação
+
+### Games
+
+O usuário pode acompanhar e adicionar novos jogos (validação para times existentes e não pode adicionar jogos contra o seu própio time)
+
+### Records
+
+Acompanhamento das suas estatisticas em relação a pontuação, e apresentação dos 5 jogos mais e menos pontuados mostrando os adversarios.
+
+### Genreal Records
+
+Acompanhamento dos recordes globais, mostrando apenas as melhores pontuações entre todos os usuários (apenas UM jogo por usuário)
+
+### Teams
+
+Pagina para acompanhar os times existentes, opção para adicionar times que aparece SOMENTE para super usuario (no caso a maria)
+
+## Observações
+
+Todo o sistema de sessão do front é controlado utilizando sessionStorage e localStorage, então usuários "maliciosos" podem acabar acessando paginas não devidas, porém todas requisições na api são autenticadas com token JWT, nesse caso mesmo mechendo no local/session storage o usuário acessa a página mas não há carregamento do back-end.
 
 ## Meta
 
-Seu Nome – [@SeuNome](https://twitter.com/...) – SeuEmail@exemplo.com
+Giovanni Bruno Buzzi – buzzi.giovanni@outlook.com
 
-Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
-
-[https://github.com/yourname/github-link](https://github.com/othonalberto/)
+[https://github.com/GiovanniBuzzi/teste-proway-publica](https://github.com/GiovanniBuzzi)
 
 ## Contributing
 
