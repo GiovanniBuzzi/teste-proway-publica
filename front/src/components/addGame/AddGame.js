@@ -4,12 +4,17 @@ import api from '../../services/api'
 
 import './addGame.css'
 
+////// componente para adicionar jogos
+////// criei um componente para inseri-lo dentro de um card
+
 const AddGame = () => {
 
     const [points,setPoints] = useState(null);
     const [adversary,setAdversary] = useState('');
     const [inside, setInside] = useState(false);
 
+    //// funcão responsavel pela chamada da api
+    //// em caso de erro exibe a mensagem no alerta
     function newGame(){
         api.post('/matches/'+sessionStorage.getItem('user_id'),{points,adversary})
         .then((response) => alert(response.data.message))
@@ -17,13 +22,16 @@ const AddGame = () => {
         
     }
 
+    //// funcoes para fazer um hover dentro do js
     function mouseIn(){
         setInside(true);
     }
     function mouseOut(){
         setInside(false);
     }
-
+    /////////////////
+    //// formulario para inserção de jogos novos
+    //// todos os dados informados são controlados pelas váriaveis de estados
     return (
         <div>
             <div className='addGame'>

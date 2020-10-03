@@ -5,6 +5,7 @@ import App from './App';
 import './index.css'
 import Img from './images/8.jpg'
 
+///// inserção do background da aplicação pela section dentro de todas paginas
 ReactDOM.render(
     <section className='appBack' style={{
                 backgroundSize: 'cover',

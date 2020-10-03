@@ -12,6 +12,8 @@ import Img4 from '../../images/2.jpg';
 
 import './main.css';
 
+//// pagina main da aplicação ////
+
 const Main = () => {
     return (
         <div className='main'>

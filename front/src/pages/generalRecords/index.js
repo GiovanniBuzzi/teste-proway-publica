@@ -6,6 +6,11 @@ import Header from '../../components/header/Header';
 
 import './generalRecords.css';
 
+////// pagina para apresentar os recordes globais (melhores entre os usuarios)
+///// como ja dito é um acesso a api onde se tudo ocorre corretamente
+//// os dados são colocados nas variaveis de estado
+//// as mesmas sao mapeadas e colocadas a disposição dos usuarios
+
 const GeneralRecords = () => {
 
     const [usersMax,

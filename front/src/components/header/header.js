@@ -2,6 +2,10 @@ import React from 'react'
 
 import './header.css'
 
+//// componente de header chamado em quase toda aplicação
+//// nas divs tem algums icones que eu copiei do bootstrap
+//// função logout que remove todas informações do usuario dos storages
+
 const Header = () => {
 
     function doLogout(){

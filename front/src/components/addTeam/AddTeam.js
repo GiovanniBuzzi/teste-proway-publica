@@ -4,6 +4,10 @@ import api from '../../services/api'
 
 import './addTeam.css'
 
+/////// mesma lógica do componente para adicionar jogo
+////// com um pouco mais de tempo acredito poderia fazer um componente unico
+////// para adicionar qualquer coisa nesse formato de formulario
+
 const AddGame = () => {
 
     const [team,setTeam] = useState('');

@@ -10,8 +10,11 @@ import Img2 from '../../images/2.jpg'
 import Img3 from '../../images/3.jpeg'
 import Img4 from '../../images/4.jpg'
 
-
 import './records.css';
+
+//// pagina dos recordes invdividuais
+//// conexao com api > validação do usuario > retorno em JSON
+//// armazenamento nas variaveis de estado > mapeamento e apresentação dos dados
 
 const Records = () => {
 

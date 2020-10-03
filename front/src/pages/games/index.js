@@ -10,6 +10,13 @@ import Img1 from '../../images/6.jpg'
 
 import './games.css';
 
+//// pagina responsavel por exibir os jogos do usuario
+//// como nas outras paginas se trata de uma chamada a api
+//// que em caso de erro emite um alerta
+//// e se ocorrer tudo corretamente armazena o JSON da api dentro
+//// da variavel de estado em questão
+//// após isso é feito apenas um mapeamento e apresentação dos dados
+
 const Games = () => {
 
     const [matches,

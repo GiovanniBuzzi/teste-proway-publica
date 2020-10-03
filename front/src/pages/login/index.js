@@ -4,6 +4,11 @@ import api from '../../services/api'
 
 import './login.css'
 
+///// funcao responsavel pelo login do usuario
+//// acesso a api, validação de login e senha
+//// caso ocorrer tudo corretamente 
+//// algumas informações sao armazenadas no storage do navegador
+
 function Login() {
 
     const [user, setUser] = useState('');

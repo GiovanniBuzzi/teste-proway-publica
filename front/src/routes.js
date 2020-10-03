@@ -1,8 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
+///// importação de serviço para autenticação de login
 import { isAuthenticated } from "./services/auth";
 
+//////// importação de paginas e componentes
 import Login from './pages/login/index'
 import Main from './pages/main/index'
 import Games from './pages/games/index'
@@ -11,6 +13,8 @@ import GeneralRecords from './pages/generalRecords/index'
 import SignUp from './pages/signUp/index'
 import Team from './pages/teams/index'
 
+
+/////// Componente para validação de rota privada
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -23,6 +27,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     }
   />
 );
+
+///////Rotas da web app
 
 const Routes = () => (
   <BrowserRouter>

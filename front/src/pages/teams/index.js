@@ -10,6 +10,13 @@ import Img1 from '../../images/6.jpg'
 
 import './teams.css';
 
+//// pagina de times
+//// qualquer usuario pode ver os times cadastrados 
+//// porem so o SU pode cadastrar times
+//// como o controle é feito pelo storage é possivel que o usuario
+//// possa ver a opção para inserir time
+//// porem a api valida o token de superusuario e nao deixa fazer o cadastro
+
 const Teams = () => {
 
     const [teams,

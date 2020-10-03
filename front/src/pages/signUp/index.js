@@ -4,6 +4,10 @@ import api from '../../services/api';
 
 import './signUp.css';
 
+//// pagina de cadastro do usuario
+//// formulario onde os dados informados são colocados nas
+//// variaveis de estado, e envio para api
+
 function SignUp() {
 
     const [name, setName] = useState('');
