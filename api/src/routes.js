@@ -2,6 +2,7 @@
 
 const MatchController = require('./controllers/MatchController');
 const UserController = require('./controllers/UserController');
+const TeamController = require('./controllers/TeamController');
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
@@ -39,5 +40,8 @@ routes.get('/users/records/:id_user', verifyJWT, UserController.record);
 routes.get('/users/records', UserController.records);
 routes.post('/users', UserController.store);
 routes.post('/users/login', UserController.login);
+
+routes.get('/teams', TeamController.index);
+routes.post('/teams', TeamController.store);
 
 module.exports = routes;

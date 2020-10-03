@@ -26,10 +26,6 @@ const Games = () => {
         fetchMatches();
     }, []);
 
-    function setMessage(message){
-        console.log(message.response.request.response);
-    }
-
     return (
         <div className='games'>
             <Header/>
